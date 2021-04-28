@@ -1,0 +1,39 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp5
+{
+    public enum DayOfWeek
+    {
+        Monday = 1,
+        Tuesday,
+        Wednesday,
+        Thursday,
+        Friday,
+        Saturday,
+        Sunday
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write(" Enter the day: ");
+            int num = int.Parse(Console.ReadLine());
+
+            Week(num);
+
+            Console.ReadKey();
+        }
+        static void Week(int num)
+        {
+            if (num < 1 || num > 7)
+                Console.WriteLine("v nedele 7 dney");
+            else
+                Console.WriteLine($" rezultat {(DayOfWeek)num}");
+        }
+    
+    }
+}

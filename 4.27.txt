@@ -1,0 +1,40 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp4
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write(" vvedite nacalnoe cislo ");
+            int first = int.Parse(Console.ReadLine());
+            Console.Write(" vvedite konecnoe cislo ");
+            int second = int.Parse(Console.ReadLine());
+
+            if (first < 0 || second< 0)
+                Console.Write("vvedite vernoe ");
+            else
+                Console.WriteLine($" OTVET {Sum(first, second)}");
+            Console.ReadKey();
+
+        }
+        static int Sum(int num1, int num2)
+        {
+            if (num1 == num2)
+                return num2;
+            else if (num1 < num2)
+            {
+                return num2 + Sum(num1, num2 - 1);
+            }
+            else
+            {
+                return num1 + Sum(num1 - 1, num2);
+            }
+        }
+
+    }
+}

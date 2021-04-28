@@ -1,0 +1,36 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int sum = 0, count = 0;
+
+            Console.WriteLine($" Sum: {Sum(2, sum, 1, count)}");
+            Console.ReadKey();
+        }
+        static int Sum(int num, int add, int stepen, int count)
+        {
+            stepen *= 2;
+            add = stepen;
+            add += stepen;
+            count += add;
+
+            if (num == 10)
+            {
+                return count;
+            }
+            else
+            {
+                return Sum(num + 1, add, stepen, count);
+            }
+        }
+
+    }
+}
